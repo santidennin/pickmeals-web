@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /assets/photos/source/
+
+Sitemap: https://pickmeals.com.ar/sitemap.xml

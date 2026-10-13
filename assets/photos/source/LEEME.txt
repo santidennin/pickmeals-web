@@ -1,0 +1,24 @@
+PICK MEALS — Carpeta de fotos originales
+========================================
+
+Copiá acá las fotos que manda el cliente, con ESTOS nombres exactos
+(la extensión puede ser .jpg, .jpeg, .png o .heic):
+
+  hero-vianda        → Portada del sitio            · vertical 4:5   · mínimo 1600 x 2000 px
+  vianda-01          → Producto 1 del catálogo      · horizontal 4:3 · mínimo 1200 x 900 px
+  vianda-02          → Producto 2 del catálogo      · horizontal 4:3 · mínimo 1200 x 900 px
+  vianda-03          → Producto 3 del catálogo      · horizontal 4:3 · mínimo 1200 x 900 px
+  vianda-04          → Producto 4 del catálogo      · horizontal 4:3 · mínimo 1200 x 900 px
+  vianda-05          → Producto 5 del catálogo      · horizontal 4:3 · mínimo 1200 x 900 px
+  vianda-06          → Producto 6 del catálogo      · horizontal 4:3 · mínimo 1200 x 900 px
+  punto-de-venta     → Pick Meals en un comercio    · vertical 4:5   · mínimo 1200 x 1500 px
+  nosotros-cocina    → Somos Pick Meals             · horizontal 3:2 · mínimo 1500 x 1000 px
+
+Después se convierten a WebP (pisando los placeholders de assets/img/):
+
+  python <carpeta-de-la-skill>/scripts/webp_convert.py --src assets/photos/source --dst assets/img
+
+El HTML no se toca: cada foto reemplaza a su placeholder automáticamente.
+Esta carpeta NO se publica (queda bloqueada por .htaccess y robots.txt).
+
+Detalle completo para el cliente: FOTOS-PENDIENTES.md (raíz del proyecto).

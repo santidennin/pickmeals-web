@@ -1,0 +1,6 @@
+# Config local de preview (servidor de desarrollo) — no hace falta en el repo del cliente
+.claude/
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store
