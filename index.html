@@ -34,10 +34,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Figtree:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Sarina&display=swap">
 
   <link rel="preload" as="image" href="assets/img/hero-vianda.webp" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=20261013">
+  <link rel="stylesheet" href="styles.css?v=20261020">
 
   <!-- PENDIENTE: agregar "logo" (URL del logo oficial en alta) y, si corresponde, "address"/"telephone"
        cuando estén confirmados. Se usa Organization porque Pick Meals es una elaboradora B2B sin local
@@ -96,8 +96,8 @@
       <a class="brand" href="index.html" aria-label="Pick Meals — inicio">
         <!-- PENDIENTE: logo provisorio armado con tipografía. Reemplazar por el logo oficial en alta
              (assets/img/logo-pickmeals.svg o .webp) y extraer de ahí el hex exacto del violeta. -->
-        <span class="wordmark" aria-hidden="true">P<span class="wm-i">I<svg class="wm-sprout" viewBox="0 0 24 24" fill="currentColor"><path d="M11.2 24v-10h1.6v10z"/><path d="M12 14.6C12 9.6 8.6 6.2 3.4 6.2c0 5.1 3.5 8.4 8.6 8.4z"/><path d="M12 12.6c0-4.8 3.3-8.3 8.6-8.4 0 4.9-3.4 8.4-8.6 8.4z"/></svg></span>CK<span class="wm-dot">·</span>MEALS</span>
-        <span class="brand-script" aria-hidden="true">Somos comida</span>
+        <span class="wordmark" aria-hidden="true"><span class="pm-pick">P<span class="wm-i">I<svg class="pm-iso" viewBox="0 0 100 100" focusable="false"><path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/><path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/><path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/><path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/></svg></span>CK</span><span class="pm-meals">MEALS</span></span>
+        <span class="brand-script" aria-hidden="true">Somos Comida</span>
       </a>
 
       <nav aria-label="Principal">
@@ -160,26 +160,13 @@
             <!-- FOTO: hero-vianda.webp · 4:5 vertical — ver FOTOS-PENDIENTES.md -->
             <img src="assets/img/hero-vianda.webp" alt="Vianda Pick Meals lista para ofrecer en el comercio" width="1600" height="2000" fetchpriority="high" loading="eager" decoding="async">
           </div>
-          <div class="seal" aria-hidden="true">
-            <svg class="seal-svg" viewBox="0 0 200 200">
-              <defs>
-                <path id="seal-top-hero" d="M29 100a71 71 0 0 1 142 0"/>
-                <path id="seal-bot-hero" d="M19 100a81 81 0 0 0 162 0"/>
-              </defs>
-              <circle class="seal-disc" cx="100" cy="100" r="98"/>
-              <circle class="seal-rule" cx="100" cy="100" r="91"/>
-              <circle class="seal-rule" cx="100" cy="100" r="62"/>
-              <g class="seal-ring">
-                <text class="seal-text"><textPath href="#seal-top-hero" startOffset="50%" text-anchor="middle">ATMÓSFERA CONTROLADA</textPath></text>
-                <text class="seal-text"><textPath href="#seal-bot-hero" startOffset="50%" text-anchor="middle">SIN CONSERVANTES</textPath></text>
-                <circle class="seal-dot" cx="24" cy="100" r="2.6"/>
-                <circle class="seal-dot" cx="176" cy="100" r="2.6"/>
-              </g>
+          <div class="pm-badge" aria-hidden="true">
+            <svg class="pm-iso" viewBox="0 0 100 100" focusable="false">
+              <path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
+              <path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/>
+              <path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/>
+              <path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/>
             </svg>
-            <div class="seal-core">
-              <span class="wordmark">P<span class="wm-i">I<svg class="wm-sprout" viewBox="0 0 24 24" fill="currentColor"><path d="M11.2 24v-10h1.6v10z"/><path d="M12 14.6C12 9.6 8.6 6.2 3.4 6.2c0 5.1 3.5 8.4 8.6 8.4z"/><path d="M12 12.6c0-4.8 3.3-8.3 8.6-8.4 0 4.9-3.4 8.4-8.6 8.4z"/></svg></span>CK<span class="wm-dot">·</span>MEALS</span>
-              <span class="script">Somos comida</span>
-            </div>
           </div>
         </div>
       </div>
@@ -203,27 +190,25 @@
           </div>
         </div>
 
-        <!-- PENDIENTE: catálogo real. Estas 4 tarjetas son DEMO (mismas que las primeras 4 de productos.html).
-             Reemplazar nombre y descripción cuando el cliente pase el listado de viandas. -->
+        <!-- Catálogo: 4 productos. Jamón y queso / Pollo y puerro ya son reales (foto y datos del
+             cliente). Vianda de ejemplo 3/4 siguen pendientes — reemplazar cuando lleguen. -->
         <ul class="products-grid" role="list">
           <li class="product-card" data-reveal>
-            <figure class="product-media"><img src="assets/img/vianda-01.webp" alt="Vianda de ejemplo 1" width="1200" height="900" loading="lazy" decoding="async"></figure>
+            <figure class="product-media"><img src="assets/img/vianda-jamon-queso.webp" alt="Tarta de jamón y queso Pick Meals" width="1024" height="1536" loading="lazy" decoding="async"></figure>
             <div class="product-body">
-              <span class="badge-demo">Demo</span>
-              <h3>Vianda de ejemplo 1</h3>
-              <p>Nombre y descripción a confirmar con el catálogo de Pick Meals.</p>
+              <h3>Tarta de jamón y queso</h3>
+              <p>Tarta rellena de jamón cocido, queso mozzarella y huevo. 388&nbsp;g.</p>
             </div>
           </li>
           <li class="product-card" data-reveal style="--d:1">
-            <figure class="product-media"><img src="assets/img/vianda-02.webp" alt="Vianda de ejemplo 2" width="1200" height="900" loading="lazy" decoding="async"></figure>
+            <figure class="product-media"><img src="assets/img/vianda-pollo-puerro.webp" alt="Tarta de pollo y puerro Pick Meals" width="1024" height="1536" loading="lazy" decoding="async"></figure>
             <div class="product-body">
-              <span class="badge-demo">Demo</span>
-              <h3>Vianda de ejemplo 2</h3>
-              <p>Nombre y descripción a confirmar con el catálogo de Pick Meals.</p>
+              <h3>Tarta de pollo y puerro</h3>
+              <p>Tarta rellena de pollo, huevo, cebolla, puerro y queso sardo. 390&nbsp;g.</p>
             </div>
           </li>
           <li class="product-card" data-reveal style="--d:2">
-            <figure class="product-media"><img src="assets/img/vianda-03.webp" alt="Vianda de ejemplo 3" width="1200" height="900" loading="lazy" decoding="async"></figure>
+            <figure class="product-media"><img src="assets/img/vianda-03.webp" alt="Vianda de ejemplo 3" width="1200" height="1500" loading="lazy" decoding="async"></figure>
             <div class="product-body">
               <span class="badge-demo">Demo</span>
               <h3>Vianda de ejemplo 3</h3>
@@ -231,7 +216,7 @@
             </div>
           </li>
           <li class="product-card" data-reveal style="--d:3">
-            <figure class="product-media"><img src="assets/img/vianda-04.webp" alt="Vianda de ejemplo 4" width="1200" height="900" loading="lazy" decoding="async"></figure>
+            <figure class="product-media"><img src="assets/img/vianda-04.webp" alt="Vianda de ejemplo 4" width="1200" height="1500" loading="lazy" decoding="async"></figure>
             <div class="product-body">
               <span class="badge-demo">Demo</span>
               <h3>Vianda de ejemplo 4</h3>
@@ -242,7 +227,7 @@
 
         <p class="demo-note">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          <span>Vista previa con productos de ejemplo: el catálogo definitivo de viandas se carga cuando esté confirmado.</span>
+          <span>2 de 4 viandas ya son reales. Las otras 2 son de ejemplo: el catálogo definitivo se completa cuando lleguen el resto de las fotos y fichas.</span>
         </p>
 
         <div class="products-cta">
@@ -321,26 +306,13 @@
             <!-- FOTO: punto-de-venta.webp · 4:5 vertical — ver FOTOS-PENDIENTES.md -->
             <img src="assets/img/punto-de-venta.webp" alt="Viandas Pick Meals en la heladera de un comercio" width="1200" height="1500" loading="lazy" decoding="async">
           </div>
-          <div class="seal seal--light" aria-hidden="true">
-            <svg class="seal-svg" viewBox="0 0 200 200">
-              <defs>
-                <path id="seal-top-cv" d="M29 100a71 71 0 0 1 142 0"/>
-                <path id="seal-bot-cv" d="M19 100a81 81 0 0 0 162 0"/>
-              </defs>
-              <circle class="seal-disc" cx="100" cy="100" r="98"/>
-              <circle class="seal-rule" cx="100" cy="100" r="91"/>
-              <circle class="seal-rule" cx="100" cy="100" r="62"/>
-              <g class="seal-ring">
-                <text class="seal-text"><textPath href="#seal-top-cv" startOffset="50%" text-anchor="middle">ATMÓSFERA CONTROLADA</textPath></text>
-                <text class="seal-text"><textPath href="#seal-bot-cv" startOffset="50%" text-anchor="middle">SIN CONSERVANTES</textPath></text>
-                <circle class="seal-dot" cx="24" cy="100" r="2.6"/>
-                <circle class="seal-dot" cx="176" cy="100" r="2.6"/>
-              </g>
+          <div class="pm-badge pm-badge--light" aria-hidden="true">
+            <svg class="pm-iso" viewBox="0 0 100 100" focusable="false">
+              <path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
+              <path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/>
+              <path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/>
+              <path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/>
             </svg>
-            <div class="seal-core">
-              <span class="wordmark">P<span class="wm-i">I<svg class="wm-sprout" viewBox="0 0 24 24" fill="currentColor"><path d="M11.2 24v-10h1.6v10z"/><path d="M12 14.6C12 9.6 8.6 6.2 3.4 6.2c0 5.1 3.5 8.4 8.6 8.4z"/><path d="M12 12.6c0-4.8 3.3-8.3 8.6-8.4 0 4.9-3.4 8.4-8.6 8.4z"/></svg></span>CK<span class="wm-dot">·</span>MEALS</span>
-              <span class="script">Somos comida</span>
-            </div>
           </div>
         </div>
       </div>
@@ -359,26 +331,13 @@
             <!-- FOTO: nosotros-cocina.webp · 3:2 horizontal — ver FOTOS-PENDIENTES.md -->
             <img src="assets/img/nosotros-cocina.webp" alt="Elaboración de viandas en la cocina de Pick Meals" width="1500" height="1000" loading="lazy" decoding="async">
           </div>
-          <div class="seal" aria-hidden="true">
-            <svg class="seal-svg" viewBox="0 0 200 200">
-              <defs>
-                <path id="seal-top-ab" d="M29 100a71 71 0 0 1 142 0"/>
-                <path id="seal-bot-ab" d="M19 100a81 81 0 0 0 162 0"/>
-              </defs>
-              <circle class="seal-disc" cx="100" cy="100" r="98"/>
-              <circle class="seal-rule" cx="100" cy="100" r="91"/>
-              <circle class="seal-rule" cx="100" cy="100" r="62"/>
-              <g class="seal-ring">
-                <text class="seal-text"><textPath href="#seal-top-ab" startOffset="50%" text-anchor="middle">ATMÓSFERA CONTROLADA</textPath></text>
-                <text class="seal-text"><textPath href="#seal-bot-ab" startOffset="50%" text-anchor="middle">SIN CONSERVANTES</textPath></text>
-                <circle class="seal-dot" cx="24" cy="100" r="2.6"/>
-                <circle class="seal-dot" cx="176" cy="100" r="2.6"/>
-              </g>
+          <div class="pm-badge" aria-hidden="true">
+            <svg class="pm-iso" viewBox="0 0 100 100" focusable="false">
+              <path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
+              <path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/>
+              <path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/>
+              <path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/>
             </svg>
-            <div class="seal-core">
-              <span class="wordmark">P<span class="wm-i">I<svg class="wm-sprout" viewBox="0 0 24 24" fill="currentColor"><path d="M11.2 24v-10h1.6v10z"/><path d="M12 14.6C12 9.6 8.6 6.2 3.4 6.2c0 5.1 3.5 8.4 8.6 8.4z"/><path d="M12 12.6c0-4.8 3.3-8.3 8.6-8.4 0 4.9-3.4 8.4-8.6 8.4z"/></svg></span>CK<span class="wm-dot">·</span>MEALS</span>
-              <span class="script">Somos comida</span>
-            </div>
           </div>
         </div>
 
@@ -387,7 +346,12 @@
           <h2 class="h2" id="nosotros-title">Somos Pick Meals</h2>
           <p class="about-lead">Creemos que comer bien también puede ser simple.</p>
           <p>Creamos productos para acompañar las comidas de todos los días con una propuesta basada en calidad, frescura, sabor e innovación. La marca busca mantener una comunicación cercana, amigable y confiable.</p>
-          <p class="about-sign">Somos comida. <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.2 24v-10h1.6v10z"/><path d="M12 14.6C12 9.6 8.6 6.2 3.4 6.2c0 5.1 3.5 8.4 8.6 8.4z"/><path d="M12 12.6c0-4.8 3.3-8.3 8.6-8.4 0 4.9-3.4 8.4-8.6 8.4z"/></svg></p>
+          <p class="about-sign">Somos comida. <svg class="pm-iso" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
+            <path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/>
+            <path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/>
+            <path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/>
+          </svg></p>
         </div>
       </div>
     </section>
@@ -437,8 +401,8 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a class="brand" href="index.html" aria-label="Pick Meals — inicio">
-          <span class="wordmark" aria-hidden="true">P<span class="wm-i">I<svg class="wm-sprout" viewBox="0 0 24 24" fill="currentColor"><path d="M11.2 24v-10h1.6v10z"/><path d="M12 14.6C12 9.6 8.6 6.2 3.4 6.2c0 5.1 3.5 8.4 8.6 8.4z"/><path d="M12 12.6c0-4.8 3.3-8.3 8.6-8.4 0 4.9-3.4 8.4-8.6 8.4z"/></svg></span>CK<span class="wm-dot">·</span>MEALS</span>
-          <span class="brand-script" aria-hidden="true">Somos comida</span>
+          <span class="wordmark" aria-hidden="true"><span class="pm-pick">P<span class="wm-i">I<svg class="pm-iso" viewBox="0 0 100 100" focusable="false"><path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/><path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/><path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/><path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/></svg></span>CK</span><span class="pm-meals">MEALS</span></span>
+          <span class="brand-script" aria-hidden="true">Somos Comida</span>
         </a>
         <p>Comida rica, práctica y lista para tu punto de venta.</p>
         <ul class="seal-pills" role="list" aria-label="Diferenciales de Pick Meals">
@@ -482,7 +446,7 @@
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26C2.16 6.44 6.6 2 12.05 2c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></svg>
   </a>
 
-  <script defer src="lib/manifest.js?v=20261013"></script>
-  <script defer src="main.js?v=20261013"></script>
+  <script defer src="lib/manifest.js?v=20261020"></script>
+  <script defer src="main.js?v=20261020"></script>
 </body>
 </html>

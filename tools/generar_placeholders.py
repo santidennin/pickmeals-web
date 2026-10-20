@@ -21,22 +21,87 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "img"
 
-VIOLET = (91, 43, 196)
-VIOLET_DEEP = (43, 21, 102)
-MIST = (244, 242, 250)
+VIOLET = (99, 58, 181)       # #633AB5 — violeta oficial del Brandbook PICK MEALS 2025 (p.21)
+VIOLET_DEEP = (56, 34, 100)  # #382264 — equivale a --violet-900 de styles.css
+MIST = (246, 243, 251)
 MIST_2 = (230, 222, 250)
 INK_2 = (74, 66, 88)
 WHITE = (255, 255, 255)
 
+# Isotipo oficial (mano "pick" formando una C) — mismas coordenadas que .pm-iso en styles.css/HTML,
+# en un espacio de 100x100. Reutilizado acá para los placeholders y la imagen og-pickmeals.webp.
+ISO_RING = dict(center=(40.9, 57.8), r_outer=23.1, stroke=15.0, gap_from=-15.0, gap_to=65.0)
+# (translate, rotate_deg, [P0, C1, C2, P3(punta), C4, C5, de vuelta a P0]) — dos curvas cúbicas (pétalo cerrado)
+ISO_PETALS = [
+    ((21.0, 46.3), -35, (0, 2), (-7, -3), (-7.3, -10), (0, -16.5), (7.3, -10), (7, -3)),
+    ((29.4, 37.9), -10, (0, 2), (-8.5, -4.5), (-9, -17), (0, -27.5), (9, -17), (8.5, -4.5)),
+    ((40.9, 34.8), 22, (0, 2), (-8.5, -4.5), (-8.5, -16), (0, -26), (9.5, -16), (9, -4.5)),
+]
+
+
+def _cubic_bezier_points(p0, c1, c2, p3, steps=14):
+    pts = []
+    for i in range(steps + 1):
+        t = i / steps
+        mt = 1 - t
+        x = mt**3 * p0[0] + 3 * mt**2 * t * c1[0] + 3 * mt * t**2 * c2[0] + t**3 * p3[0]
+        y = mt**3 * p0[1] + 3 * mt**2 * t * c1[1] + 3 * mt * t**2 * c2[1] + t**3 * p3[1]
+        pts.append((x, y))
+    return pts
+
+
+def petal_polygon(translate, rotate_deg, p0, c1, c2, tip, c4, c5):
+    """Puntos (sin transformar) de un pétalo: dos curvas cúbicas que forman una forma cerrada."""
+    import math
+    pts = _cubic_bezier_points(p0, c1, c2, tip) + _cubic_bezier_points(tip, c4, c5, p0)[1:]
+    a = math.radians(rotate_deg)
+    ca, sa = math.cos(a), math.sin(a)
+    tx, ty = translate
+    # mismo sentido que SVG transform="translate(tx ty) rotate(deg)": rota primero, luego traslada
+    return [(tx + x * ca - y * sa, ty + x * sa + y * ca) for x, y in pts]
+
+
+def draw_isotipo(draw, img, cx, cy, scale, color, bg_for_gap=None):
+    """Dibuja el isotipo (anillo + 3 pétalos) centrado en (cx,cy), en el espacio local 100x100
+    escalado por `scale` px/unidad. Si bg_for_gap se da, se usa para 'abrir' el anillo (recorte real
+    sobre el fondo); si no, el anillo se dibuja como arco grueso con los extremos redondeados."""
+    import math
+
+    def tp(x, y):
+        # el icono fuente tiene su masa visual centrada en (~39,45) dentro del lienzo 0-100
+        return (cx + (x - 39) * scale, cy + (y - 45) * scale)
+
+    ring = ISO_RING
+    rcx, rcy = ring["center"]
+    r_out = ring["r_outer"] * scale
+    sw = ring["stroke"] * scale
+    r_c = r_out - sw / 2
+    cx2, cy2 = tp(rcx, rcy)
+    steps = 72
+    a0, a1 = math.radians(ring["gap_to"]), math.radians(ring["gap_from"] + 360)
+    pts = []
+    for i in range(steps + 1):
+        a = a0 + (a1 - a0) * i / steps
+        pts.append((cx2 + r_c * math.cos(a), cy2 + r_c * math.sin(a)))
+    draw.line(pts, fill=color, width=round(sw), joint="curve")
+    # tapas redondeadas en las puntas del anillo
+    r_cap = sw / 2
+    for px, py in (pts[0], pts[-1]):
+        draw.ellipse([px - r_cap, py - r_cap, px + r_cap, py + r_cap], fill=color)
+
+    for translate, rot, p0, c1, c2, tip, c4, c5 in ISO_PETALS:
+        poly = petal_polygon(translate, rot, p0, c1, c2, tip, c4, c5)
+        poly = [tp(x, y) for x, y in poly]
+        draw.polygon(poly, fill=color)
+
 # nombre, ancho, alto, ratio legible, descripción breve del slot
+# Catálogo: 4 productos en total — 2 reales (jamón y queso, pollo y puerro, ya con foto) +
+# 2 demo (vianda-03/04, pendientes). Formato vertical 4:5 para combinar con las fotos reales
+# del cliente (tray + etiqueta, tomadas en vertical).
 SLOTS = [
     ("hero-vianda", 1600, 2000, "4:5 · vertical", "Portada"),
-    ("vianda-01", 1200, 900, "4:3 · horizontal", "Producto 1"),
-    ("vianda-02", 1200, 900, "4:3 · horizontal", "Producto 2"),
-    ("vianda-03", 1200, 900, "4:3 · horizontal", "Producto 3"),
-    ("vianda-04", 1200, 900, "4:3 · horizontal", "Producto 4"),
-    ("vianda-05", 1200, 900, "4:3 · horizontal", "Producto 5"),
-    ("vianda-06", 1200, 900, "4:3 · horizontal", "Producto 6"),
+    ("vianda-03", 1200, 1500, "4:5 · vertical", "Producto 3 (demo)"),
+    ("vianda-04", 1200, 1500, "4:5 · vertical", "Producto 4 (demo)"),
     ("punto-de-venta", 1200, 1500, "4:5 · vertical", "Pick Meals en un comercio"),
     ("nosotros-cocina", 1500, 1000, "3:2 · horizontal", "Somos Pick Meals"),
 ]
@@ -149,38 +214,17 @@ def og_image():
         pts = wave_points(W, H, y_mid, amp, phase, W / 1.6)
         d.polygon(pts + [(W, H), (0, H)], fill=(255, 255, 255, alpha))
 
-    # sello circular a la derecha
-    cx, cy, R = W * 0.80, H * 0.40, H * 0.26
-    d.ellipse([cx - R, cy - R, cx + R, cy + R], outline=(255, 255, 255, 200), width=3 * ss)
-    d.ellipse([cx - R * 0.74, cy - R * 0.74, cx + R * 0.74, cy + R * 0.74], outline=(255, 255, 255, 120), width=2 * ss)
-    fs = font(["segoeuib.ttf", "arialbd.ttf"], round(R * 0.14))
-    import math
-    track = R * 0.025
-    # (texto, ángulo central en pantalla, sentido, radio): arriba se lee en sentido horario, abajo antihorario
-    for text, mid, direction, rr in (("ATMÓSFERA CONTROLADA", 270, 1, R * 0.87), ("SIN CONSERVANTES", 90, -1, R * 0.87)):
-        widths = [d.textlength(ch, font=fs) for ch in text]
-        total = sum(widths) + track * (len(text) - 1)
-        start = math.radians(mid) - direction * (total / rr) / 2
-        cum = 0.0
-        for ch, gw in zip(text, widths):
-            a = start + direction * (cum + gw / 2) / rr
-            cum += gw + track
-            if ch == " ":
-                continue
-            x, y = cx + rr * math.cos(a), cy + rr * math.sin(a)
-            box = round(R * 0.32)
-            glyph = Image.new("RGBA", (box, box), (0, 0, 0, 0))
-            gd = ImageDraw.Draw(glyph)
-            _, t, _, b = gd.textbbox((0, 0), "H", font=fs)  # misma línea base para todas las letras
-            gd.text((box / 2 - gw / 2, box / 2 - (t + b) / 2), ch, font=fs, fill=WHITE)
-            deg = math.degrees(a)
-            rot = (270 - deg) if direction == 1 else (90 - deg)
-            glyph = glyph.rotate(rot, resample=Image.BICUBIC)
-            img.paste(glyph, (round(x - box / 2), round(y - box / 2)), glyph)
-    d = ImageDraw.Draw(img, "RGBA")
-    fw = font(["seguibl.ttf", "segoeuib.ttf", "arialbd.ttf"], round(R * 0.26))
-    t = "PICK·MEALS"
-    d.text((cx - d.textlength(t, font=fw) / 2, cy - R * 0.2), t, font=fw, fill=WHITE)
+    # isotipo + wordmark a la derecha (versión sobre fondo violeta: todo en blanco, MEALS en contorno)
+    cx, cy, R = W * 0.78, H * 0.38, H * 0.30
+    draw_isotipo(d, img, cx, cy, scale=R * 0.0115, color=WHITE)
+
+    fw = font(["seguibl.ttf", "segoeuib.ttf", "arialbd.ttf"], round(R * 0.30))
+    wy = cy + R * 0.42
+    pick_w = d.textlength("PICK", font=fw)
+    d.text((cx - pick_w / 2, wy), "PICK", font=fw, fill=WHITE)
+    meals_w = d.textlength("MEALS", font=fw)
+    sw = max(2, round(R * 0.018))
+    d.text((cx - meals_w / 2, wy + R * 0.34), "MEALS", font=fw, fill=VIOLET, stroke_width=sw, stroke_fill=WHITE)
 
     # textos a la izquierda
     fx = W * 0.07

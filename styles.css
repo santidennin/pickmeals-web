@@ -8,15 +8,15 @@
    1. Tokens
    ============================================================= */
 :root {
-  /* Marca — PENDIENTE: confirmar el hex exacto desde el logo en alta y actualizar --violet
-     (las variantes se derivan a mano: --violet-700 más oscuro, --violet-100/50 tintes). */
-  --violet:      #5B2BC4;
-  --violet-700:  #4A21A6;   /* hover / presionado */
-  --violet-900:  #2B1566;   /* fondo del footer */
-  --violet-300:  #B9A3EC;
-  --violet-200:  #D9CCF7;
-  --violet-100:  #EDE7FB;
-  --mist:        #F4F2FA;   /* fondo suave de secciones */
+  /* Marca — del Brandbook PICK MEALS 2025 (p.21): violeta oficial R99 G58 B181.
+     Variantes derivadas matemáticamente a partir de ese hex (mezcla con blanco/negro). */
+  --violet:      #633AB5;
+  --violet-700:  #523095;   /* hover / presionado */
+  --violet-900:  #382264;   /* fondo del footer */
+  --violet-300:  #B9A6DE;
+  --violet-200:  #D0C4E9;
+  --violet-100:  #E9E3F5;
+  --mist:        #F6F3FB;   /* fondo suave de secciones */
   --white:       #FFFFFF;
 
   /* Neutros fríos */
@@ -26,7 +26,8 @@
   --line:        rgba(28, 21, 38, .10);
 
   /* Acento cálido para la comida — "azafrán". Complementario del violeta (tono ~40° vs ~258°):
-     evoca dorado de horno / comida casera. Sólo decorativo (subrayados, puntos), nunca texto. */
+     evoca dorado de horno / comida casera. Sólo decorativo (subrayados, puntos), nunca texto.
+     No es parte de la paleta oficial del brandbook (violeta/blanco/gris) — uso secundario a propósito. */
   --saffron:     #F4A62A;
 
   /* Funcionales */
@@ -34,17 +35,20 @@
   --wa:          #1A9A4B;   /* verde WhatsApp oscurecido: ícono blanco a 3.6:1 */
   --wa-hover:    #15803D;
 
-  /* Tipografías de marca — PENDIENTE: confirmar con el manual de marca.
-     Display geométrica redondeada que acompaña al wordmark, cuerpo legible y un script
-     que hace eco del "Somos Comida" del logo. Cambiar acá y en el <link> de Google Fonts. */
-  --font-display: "Outfit", "Segoe UI", system-ui, sans-serif;
-  --font-body:    "Figtree", "Segoe UI", system-ui, sans-serif;
-  --font-script:  "Caveat", "Segoe Script", cursive;
+  /* Tipografías — del Brandbook PICK MEALS 2025 (p.24):
+     Primaria: Agrandir Wide Black Italic (tipografía paga de Pangram Pangram, no disponible para
+       web sin la licencia del cliente — ver FOTOS-PENDIENTES.md). Se reemplaza por Fredoka
+       (gratuita, Google Fonts), geométrica y redondeada, el reemplazo de espíritu más cercano.
+     Secundaria ("Somos Comida"): Sarina — coincide exacto, es de Google Fonts.
+     Complementaria (texto): Inter — coincide exacto, es de Google Fonts. */
+  --font-display: "Fredoka", "Segoe UI", system-ui, sans-serif;
+  --font-body:    "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-script:  "Sarina", "Segoe Script", cursive;
 
-  /* Patrón de marca — PENDIENTE: reemplazar por el patrón oficial (mano "pick" sobre C).
-     Cuando llegue: guardarlo como assets/img/patron-pickmeals.svg y apuntar estas dos variables ahí. */
-  --pattern-violet: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%235B2BC4' stroke-width='1.4' stroke-linecap='round'%3E%3Ccircle cx='18' cy='18' r='5'/%3E%3Cpath d='M50 56c0-5 4-9 9-9'/%3E%3C/g%3E%3Cg fill='%235B2BC4'%3E%3Ccircle cx='54' cy='18' r='1.7'/%3E%3Ccircle cx='18' cy='54' r='1.7'/%3E%3C/g%3E%3C/svg%3E");
-  --pattern-white:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-width='1.4' stroke-linecap='round'%3E%3Ccircle cx='18' cy='18' r='5'/%3E%3Cpath d='M50 56c0-5 4-9 9-9'/%3E%3C/g%3E%3Cg fill='%23FFFFFF'%3E%3Ccircle cx='54' cy='18' r='1.7'/%3E%3Ccircle cx='18' cy='54' r='1.7'/%3E%3C/g%3E%3C/svg%3E");
+  /* Patrón de marca — el isotipo oficial (mano "pick" formando una C) tileado en baja opacidad,
+     tal como lo define el Brandbook p.26 "Tramas Isotipo". */
+  --pattern-violet: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg transform='translate(14 10) scale(0.46)'%3E%3Cpath d='M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76' fill='none' stroke='%23633AB5' stroke-width='15' stroke-linecap='round'/%3E%3Cpath transform='translate(21.0 46.3) rotate(-35)' d='M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z' fill='%23633AB5'/%3E%3Cpath transform='translate(29.4 37.9) rotate(-10)' d='M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z' fill='%23633AB5'/%3E%3Cpath transform='translate(40.9 34.8) rotate(22)' d='M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z' fill='%23633AB5'/%3E%3C/g%3E%3C/svg%3E");
+  --pattern-white:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg transform='translate(14 10) scale(0.46)'%3E%3Cpath d='M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76' fill='none' stroke='%23FFFFFF' stroke-width='15' stroke-linecap='round'/%3E%3Cpath transform='translate(21.0 46.3) rotate(-35)' d='M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z' fill='%23FFFFFF'/%3E%3Cpath transform='translate(29.4 37.9) rotate(-10)' d='M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z' fill='%23FFFFFF'/%3E%3Cpath transform='translate(40.9 34.8) rotate(22)' d='M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z' fill='%23FFFFFF'/%3E%3C/g%3E%3C/svg%3E");
 
   /* Layout */
   --container:   1200px;
@@ -155,7 +159,7 @@ section[id], [id].anchor { scroll-margin-top: calc(var(--header-h) + 12px); }
 
 .script {
   font-family: var(--font-script);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -230,74 +234,62 @@ section[id], [id].anchor { scroll-margin-top: calc(var(--header-h) + 12px); }
 .link-arrow:hover { border-color: currentColor; gap: .7rem; }
 .link-arrow svg { width: 1.1em; height: 1.1em; flex: none; }
 
-/* ---------- Brand lockup (placeholder del logo) ---------- */
+/* ---------- Brand lockup — isotipo oficial + wordmark "PICK" (relleno) / "MEALS" (contorno) + script.
+   Del Brandbook PICK MEALS 2025: el isotipo (mano "pick" formando una C) reemplaza el punto de la
+   "I", "MEALS" va siempre en contorno (nunca relleno), "Somos Comida" en script debajo. ---------- */
+.pm-iso {
+  width: 1em; height: 1em; max-width: none; /* el reset global pone max-width:100%, que en un
+    contenedor absolute tan angosto como la "I" recortaría el ícono — se anula acá */
+  display: inline-block; overflow: visible; vertical-align: -0.08em;
+}
 .brand {
   display: inline-flex; flex-direction: column; align-items: flex-start;
   line-height: 1; color: var(--violet);
-  padding-top: .5rem; /* aire para el brote */
+  padding-top: .5rem; /* aire para el isotipo */
 }
 .wordmark {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.38rem;
-  letter-spacing: .05em;
+  font-weight: 700;
+  font-style: oblique 6deg;
+  font-size: 1.42rem;
+  letter-spacing: .005em;
   white-space: nowrap;
 }
 .wm-i { position: relative; display: inline-block; }
-.wm-sprout {
-  position: absolute; left: 50%; bottom: 78%;
-  width: .62em; height: .62em;
-  transform: translateX(-46%);
-  color: currentColor;
+.wm-i .pm-iso {
+  position: absolute; left: 50%; bottom: 74%;
+  width: .92em; height: .92em;
+  transform: translateX(-42%);
 }
-.wm-dot { display: inline-block; margin-inline: .06em; color: var(--saffron); }
+.pm-meals {
+  /* contorno real: -webkit-text-fill-color oculta el relleno sin tocar `color`, así que
+     currentColor (heredado del .brand del contexto: violeta o blanco en el footer) sigue
+     siendo el color correcto del trazo. Sin soporte, el texto queda relleno — nunca invisible. */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.3px currentColor;
+}
 .brand-script {
-  font-family: var(--font-script); font-weight: 700;
-  font-size: 1.12rem; line-height: .9;
-  margin-top: .05rem; margin-left: auto;
-  transform: rotate(-4deg);
+  font-family: var(--font-script); font-weight: 400;
+  font-size: 1.22rem; line-height: .9;
+  margin-top: .12rem; margin-left: auto;
   color: var(--violet-700);
 }
 .site-footer .brand,
 .site-footer .brand-script { color: var(--white); }
 
-/* ---------- Seal (sello circular de marca) ---------- */
-.seal {
-  --seal-size: 168px;
-  position: relative;
-  width: var(--seal-size);
+/* ---------- Badge — isotipo en círculo, elemento gráfico recurrente (Brandbook p.26 "Tramas Isotipo") ---------- */
+.pm-badge {
+  --badge-size: 132px;
+  width: var(--badge-size);
   aspect-ratio: 1;
   flex: none;
-  color: var(--white);
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--violet); color: var(--white);
   filter: drop-shadow(0 18px 30px rgba(43, 21, 102, .28));
 }
-.seal-svg { width: 100%; height: 100%; overflow: visible; }
-.seal-disc { fill: var(--violet); }
-.seal-rule { fill: none; stroke: rgba(255, 255, 255, .45); stroke-width: 1; }
-.seal-text {
-  fill: currentColor;
-  font-family: var(--font-display);
-  font-weight: 600; font-size: 12.6px; letter-spacing: 1.1px;
-}
-.seal-dot { fill: var(--saffron); }
-.seal-ring {
-  transform-origin: 100px 100px;
-  transform-box: view-box;
-  animation: sealSpin 48s linear infinite;
-}
-.seal-core {
-  position: absolute; inset: 0;
-  display: grid; place-content: center; justify-items: center;
-  text-align: center;
-  pointer-events: none;
-}
-.seal-core .wordmark { font-size: calc(var(--seal-size) * .084); letter-spacing: .03em; }
-.seal-core .wm-dot { color: var(--saffron); }
-.seal-core .script { font-size: calc(var(--seal-size) * .096); line-height: 1; margin-top: .1em; color: var(--violet-100); }
-.seal--light { color: var(--violet); }
-.seal--light .seal-disc { fill: var(--white); }
-.seal--light .seal-rule { stroke: rgba(91, 43, 196, .35); }
-.seal--light .seal-core .script { color: var(--violet-700); }
+.pm-badge .pm-iso { width: 54%; height: 54%; }
+.pm-badge--light { background: var(--white); color: var(--violet); }
 
 /* ---------- Pills (sellos chicos en línea) ---------- */
 .seal-pills { display: flex; flex-wrap: wrap; gap: .5rem; }
@@ -741,7 +733,7 @@ select.input {
   border-radius: 58% 42% 44% 56% / 52% 58% 42% 48%;
   animation: blobMorph 20s ease-in-out infinite alternate-reverse;
 }
-.hero-media .seal { position: absolute; left: -2%; bottom: -2%; --seal-size: clamp(118px, 30vw, 172px); }
+.hero-media .pm-badge { position: absolute; left: -2%; bottom: -2%; --badge-size: clamp(118px, 30vw, 172px); }
 
 /* ---------- Productos (home) ---------- */
 .products-intro { display: grid; gap: 1.1rem; margin-bottom: clamp(2rem, 5vw, 3rem); }
@@ -756,13 +748,13 @@ select.input {
 .convert-copy .btn-row .btn { flex: 1 1 15rem; }
 .convert-media { position: relative; justify-self: center; width: min(100%, 420px); padding: 0 1.5rem 1.5rem 0; }
 .convert-media .blob { aspect-ratio: 4 / 5; box-shadow: 0 30px 70px -20px rgba(20, 8, 60, .6); }
-.convert-media .seal { position: absolute; right: -4%; bottom: -3%; --seal-size: clamp(116px, 28vw, 160px); }
+.convert-media .pm-badge { position: absolute; right: -4%; bottom: -3%; --badge-size: clamp(116px, 28vw, 160px); }
 
 /* ---------- Somos Pick Meals ---------- */
 .about-grid { display: grid; gap: clamp(2.5rem, 6vw, 4rem); align-items: center; }
 .about-media { position: relative; }
 .about-media .blob { aspect-ratio: 3 / 2; box-shadow: var(--shadow-lg); }
-.about-media .seal { position: absolute; right: 4%; top: -12%; --seal-size: clamp(104px, 24vw, 150px); }
+.about-media .pm-badge { position: absolute; right: 4%; top: -12%; --badge-size: clamp(104px, 24vw, 150px); }
 .about-copy { display: grid; gap: 1.2rem; justify-items: start; }
 .about-lead {
   font-family: var(--font-display); font-weight: 600;
@@ -773,13 +765,13 @@ select.input {
 .about-copy p:not([class]) { color: var(--ink-2); font-size: 1.06rem; }
 .about-sign {
   display: inline-flex; align-items: center; gap: .6rem;
-  font-family: var(--font-script); font-weight: 700;
+  font-family: var(--font-script); font-weight: 400;
   font-size: clamp(2.4rem, 7vw, 3.4rem); line-height: 1;
   color: var(--violet);
   transform: rotate(-3deg);
   margin-top: .3rem;
 }
-.about-sign svg { width: .7em; height: .7em; color: var(--saffron); }
+.about-sign svg { width: .7em; height: .7em; color: var(--violet); vertical-align: -0.05em; }
 
 /* ---------- Puntos de venta ---------- */
 .pdv-card {
@@ -819,7 +811,7 @@ select.input {
 .page-hero-grid { position: relative; display: grid; gap: 1.6rem; align-items: center; }
 .page-hero-copy { display: grid; gap: 1.1rem; justify-items: start; max-width: 44rem; }
 .page-title { font-size: clamp(2.3rem, 7vw, 4.2rem); letter-spacing: -.03em; }
-.page-hero .seal { display: none; }
+.page-hero .pm-badge { display: none; }
 .breadcrumb { font-size: .88rem; color: var(--ink-3); }
 .breadcrumb ol { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; }
 .breadcrumb li + li::before { content: "/"; margin-right: .4rem; opacity: .6; }
@@ -930,12 +922,12 @@ select.input {
 @media (min-width: 720px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
   .product-card { grid-template-columns: 1fr; }
-  .product-media { aspect-ratio: 4 / 3; min-height: 0; }
+  .product-media { aspect-ratio: 4 / 5; min-height: 0; }
   .pillars { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
   .claims-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
   .products-intro { grid-template-columns: 1.1fr 1fr; align-items: end; gap: 2.5rem; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1.2fr; }
-  .page-hero .seal { display: block; justify-self: end; --seal-size: 168px; }
+  .page-hero .pm-badge { display: block; justify-self: end; --badge-size: 168px; }
   .page-hero-grid { grid-template-columns: 1fr auto; }
 }
 
@@ -997,7 +989,6 @@ select.input {
    ============================================================= */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .seal-ring { animation: none; }
   @view-transition { navigation: none; }
   .js [data-reveal] { transform: translateY(12px); transition-duration: .5s; }
 }
