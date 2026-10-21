@@ -18,7 +18,6 @@
   <meta property="og:title" content="Productos para tu comercio — Viandas Pick Meals">
   <meta property="og:description" content="Catálogo de viandas Pick Meals para almacenes, autoservicios y comercios: comidas abundantes, prácticas y elaboradas con ingredientes seleccionados.">
   <meta property="og:url" content="https://pickmeals.com.ar/productos.html">
-  <!-- PENDIENTE: regenerar og-pickmeals.webp con el logo oficial (tools/generar_placeholders.py) -->
   <meta property="og:image" content="https://pickmeals.com.ar/assets/img/og-pickmeals.webp">
   <meta property="og:image:type" content="image/webp">
   <meta property="og:image:width" content="1200">
@@ -29,16 +28,15 @@
   <meta name="twitter:description" content="Catálogo de viandas Pick Meals para almacenes, autoservicios y comercios: comidas abundantes, prácticas y elaboradas con ingredientes seleccionados.">
   <meta name="twitter:image" content="https://pickmeals.com.ar/assets/img/og-pickmeals.webp">
 
-  <!-- PENDIENTE: favicon provisorio (brote). Reemplazar con el isotipo oficial cuando llegue el logo. -->
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Sarina&display=swap">
 
-  <link rel="stylesheet" href="styles.css?v=20261020">
+  <link rel="stylesheet" href="styles.css?v=20261021">
 
-  <!-- PENDIENTE: agregar "logo" (URL del logo oficial en alta) y "telephone" cuando estén confirmados. -->
+  <!-- PENDIENTE: agregar "telephone" cuando esté confirmado. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,6 +47,7 @@
         "name": "Pick Meals",
         "alternateName": "PICK MEALS",
         "url": "https://pickmeals.com.ar/",
+        "logo": "https://pickmeals.com.ar/assets/img/logo-pickmeals.svg",
         "slogan": "Somos comida",
         "description": "Elaboramos viandas pensadas para resolver las comidas de todos los días, combinando sabor, calidad y frescura, con tecnología de Atmósfera Controlada y sin conservantes artificiales. Productos para almacenes, autoservicios, mercados y puntos de venta.",
         "email": "info@pickmeals.com.ar",
@@ -92,10 +91,7 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="Pick Meals — inicio">
-        <!-- PENDIENTE: logo provisorio armado con tipografía. Reemplazar por el logo oficial en alta
-             (assets/img/logo-pickmeals.svg o .webp) y extraer de ahí el hex exacto del violeta. -->
-        <span class="wordmark" aria-hidden="true"><span class="pm-pick">P<span class="wm-i">I<svg class="pm-iso" viewBox="0 0 100 100" focusable="false"><path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/><path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/><path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/><path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/></svg></span>CK</span><span class="pm-meals">MEALS</span></span>
-        <span class="brand-script" aria-hidden="true">Somos Comida</span>
+        <img class="brand-logo" src="assets/img/logo-pickmeals.svg" alt="" width="720" height="490" decoding="async">
       </a>
 
       <nav aria-label="Principal">
@@ -147,80 +143,66 @@
           <h1 class="page-title hero-in" id="page-title" style="--d:2">Productos para tu comercio</h1>
           <p class="lead hero-in" style="--d:3">Una propuesta práctica para almacenes, autoservicios y comercios que buscan sumar opciones de comida listas para ofrecer a sus clientes.</p>
         </div>
-        <div class="pm-badge" aria-hidden="true">
-          <svg class="pm-iso" viewBox="0 0 100 100" focusable="false">
-            <path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
-            <path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/>
-            <path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/>
-            <path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/>
-          </svg>
+        <div class="seal" aria-hidden="true">
+            <img src="assets/img/logo-seal.png" alt="" loading="lazy" decoding="async">
+          </div>
+      </div>
+    </section>
+
+    <div class="wave wave--mist-white" aria-hidden="true">
+      <svg class="wave-back" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 46C240 76 480 76 720 46C960 16 1200 16 1440 46C1680 76 1920 76 2160 46C2400 16 2640 16 2880 46V100H0Z"/></svg>
+      <svg class="wave-front" viewBox="0 0 2880 100" preserveAspectRatio="none"><path d="M0 60C240 34 480 34 720 60C960 86 1200 86 1440 60C1680 34 1920 34 2160 60C2400 86 2640 86 2880 60V100H0Z"/></svg>
+  </div>
+
+    <!-- ===================== CATÁLOGO ===================== -->
+    <section class="section section--tight-top" id="catalogo" aria-labelledby="catalogo-title">
+      <div class="container">
+        <div class="catalog-bar" data-reveal>
+          <h2 class="h2" id="catalogo-title">Nuestras viandas</h2>
+          <p class="lead">Viandas Pick Meals: comidas abundantes, prácticas y elaboradas con ingredientes seleccionados.</p>
         </div>
 
-        <!-- Catálogo: 4 productos. Jamón y queso / Pollo y puerro ya son reales (foto y datos del
-             cliente). Vianda de ejemplo 3/4 siguen pendientes — reemplazar cuando lleguen el resto
-             de fotos y fichas (mismo formato: <li class="product-card"> completo, duplicar y editar). -->
+        <!-- Catálogo: 4 productos, los 4 ya reales. -->
         <ul class="products-grid products-grid--catalog" role="list">
           <li class="product-card" data-reveal style="--d:0">
+            <figure class="product-media"><img src="assets/img/vianda-ensalada-chef.webp" alt="Ensalada del Chef Pick Meals" width="1200" height="900" loading="lazy" decoding="async"></figure>
+            <div class="product-body">
+              <h3>Ensalada del Chef</h3>
+              <p>Mezcla de lechuga, zanahoria, huevo, tomate, queso danbo, jamón cocido, choclo y arvejas.</p>
+              <ul class="product-meta" role="list">
+                <li>Conservación: <strong>Refrigerado</strong></li>
+                <li>Cont. neto: <strong>380 g</strong></li>
+              </ul>            </div>
+          </li>
+          <li class="product-card" data-reveal style="--d:1">
+            <figure class="product-media"><img src="assets/img/vianda-ensalada-caesar.webp" alt="Ensalada Caesar con pollo Pick Meals" width="1200" height="900" loading="lazy" decoding="async"></figure>
+            <div class="product-body">
+              <h3>Ensalada Caesar con pollo</h3>
+              <p>Mezcla de lechuga, pollo cocido, queso sardo y trozos de pan tostado con salsa tipo caesar.</p>
+              <ul class="product-meta" role="list">
+                <li>Conservación: <strong>Refrigerado</strong></li>
+                <li>Cont. neto: <strong>380 g</strong></li>
+              </ul>            </div>
+          </li>
+          <li class="product-card" data-reveal style="--d:2">
             <figure class="product-media"><img src="assets/img/vianda-jamon-queso.webp" alt="Tarta de jamón y queso Pick Meals" width="1024" height="1536" loading="lazy" decoding="async"></figure>
             <div class="product-body">
               <h3>Tarta de jamón y queso</h3>
               <p>Tarta rellena de jamón cocido, queso mozzarella y huevo.</p>
               <ul class="product-meta" role="list">
-                <li>Peso: <strong>388 g</strong></li>
-              </ul>
-              <ul class="product-tags" role="list" aria-label="Diferenciales">
-                <li>Atmósfera Controlada</li>
-                <li>Sin conservantes ni aditivos</li>
-              </ul>
-              <a class="link-arrow" href="contacto.html?producto=Tarta%20de%20jam%C3%B3n%20y%20queso">Consultar por esta vianda <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
+                <li>Conservación: <strong>a confirmar</strong></li>
+                <li>Cont. neto: <strong>388 g</strong></li>
+              </ul>            </div>
           </li>
-          <li class="product-card" data-reveal style="--d:1">
+          <li class="product-card" data-reveal style="--d:3">
             <figure class="product-media"><img src="assets/img/vianda-pollo-puerro.webp" alt="Tarta de pollo y puerro Pick Meals" width="1024" height="1536" loading="lazy" decoding="async"></figure>
             <div class="product-body">
               <h3>Tarta de pollo y puerro</h3>
               <p>Tarta rellena de pollo, huevo, cebolla, puerro y queso sardo.</p>
               <ul class="product-meta" role="list">
-                <li>Peso: <strong>390 g</strong></li>
-              </ul>
-              <ul class="product-tags" role="list" aria-label="Diferenciales">
-                <li>Atmósfera Controlada</li>
-                <li>Sin conservantes ni aditivos</li>
-              </ul>
-              <a class="link-arrow" href="contacto.html?producto=Tarta%20de%20pollo%20y%20puerro">Consultar por esta vianda <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-          </li>
-          <li class="product-card" data-reveal style="--d:2">
-            <figure class="product-media"><img src="assets/img/vianda-03.webp" alt="Vianda de ejemplo 3" width="1200" height="1500" loading="lazy" decoding="async"></figure>
-            <div class="product-body">
-              <span class="badge-demo">Demo</span>
-              <h3>Vianda de ejemplo 3</h3>
-              <p>Descripción e ingredientes a confirmar con el catálogo de Pick Meals.</p>
-              <ul class="product-meta" role="list">
                 <li>Conservación: <strong>a confirmar</strong></li>
-              </ul>
-              <ul class="product-tags" role="list" aria-label="Diferenciales">
-                <li>Atmósfera Controlada</li>
-                <li>Sin conservantes artificiales</li>
-              </ul>
-              <a class="link-arrow" href="contacto.html?producto=Vianda%20de%20ejemplo%203">Consultar por esta vianda <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
-          </li>
-          <li class="product-card" data-reveal style="--d:3">
-            <figure class="product-media"><img src="assets/img/vianda-04.webp" alt="Vianda de ejemplo 4" width="1200" height="1500" loading="lazy" decoding="async"></figure>
-            <div class="product-body">
-              <span class="badge-demo">Demo</span>
-              <h3>Vianda de ejemplo 4</h3>
-              <p>Descripción e ingredientes a confirmar con el catálogo de Pick Meals.</p>
-              <ul class="product-meta" role="list">
-                <li>Conservación: <strong>a confirmar</strong></li>
-              </ul>
-              <ul class="product-tags" role="list" aria-label="Diferenciales">
-                <li>Atmósfera Controlada</li>
-                <li>Sin conservantes artificiales</li>
-              </ul>
-              <a class="link-arrow" href="contacto.html?producto=Vianda%20de%20ejemplo%204">Consultar por esta vianda <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
+                <li>Cont. neto: <strong>390 g</strong></li>
+              </ul>            </div>
           </li>
         </ul>
       </div>
@@ -259,7 +241,7 @@
               <span class="blob-shape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
             </div>
             <h3>Sin conservantes artificiales</h3>
-            <p>Buscamos mantener los alimentos frescos mediante tecnología, ofreciendo una alternativa práctica y consciente.</p>
+            <p>Buscamos mantener los alimentos frescos mediante tecnología, ofreciendo una alternativa práctica.</p>
           </li>
           <li class="pillar" data-reveal style="--d:3">
             <div class="pillar-icon" aria-hidden="true">
@@ -281,9 +263,8 @@
     <section class="section section--violet section--pattern on-violet" id="sumate" aria-labelledby="sumate-title">
       <div class="container convert-grid">
         <div class="convert-copy" data-reveal>
-          <p class="eyebrow">Para comercios</p>
           <h2 class="h2" id="sumate-title">Sumá Pick Meals a tu punto de venta</h2>
-          <p class="convert-lead">Queremos que cada vez más comercios puedan ofrecer una alternativa de comida real, rica y práctica.</p>
+          <p class="convert-lead">Queremos que cada vez más comercios puedan ofrecer una alternativa de comida rica y práctica.</p>
           <p>Si tenés un almacén, autoservicio, mercado o punto de venta, contactanos para conocer nuestros productos y condiciones comerciales.</p>
           <div class="btn-row">
             <a class="btn btn--light" href="contacto.html">Quiero vender Pick Meals <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -293,16 +274,10 @@
 
         <div class="convert-media" data-reveal style="--d:1">
           <div class="blob blob--b">
-            <!-- FOTO: punto-de-venta.webp · 4:5 vertical — ver FOTOS-PENDIENTES.md -->
-            <img src="assets/img/punto-de-venta.webp" alt="Viandas Pick Meals en la heladera de un comercio" width="1200" height="1500" loading="lazy" decoding="async">
+            <img src="assets/img/punto-de-venta.webp" alt="Preparación de una vianda Pick Meals, lista para tu comercio" width="1200" height="1500" loading="lazy" decoding="async">
           </div>
-          <div class="pm-badge pm-badge--light" aria-hidden="true">
-            <svg class="pm-iso" viewBox="0 0 100 100" focusable="false">
-              <path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/>
-              <path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/>
-              <path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/>
-              <path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/>
-            </svg>
+          <div class="seal seal--light" aria-hidden="true">
+            <img src="assets/img/logo-seal.png" alt="" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -320,8 +295,7 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a class="brand" href="index.html" aria-label="Pick Meals — inicio">
-          <span class="wordmark" aria-hidden="true"><span class="pm-pick">P<span class="wm-i">I<svg class="pm-iso" viewBox="0 0 100 100" focusable="false"><path d="M 47.49 71.94 A 15.60 15.60 0 1 1 55.97 53.76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/><path transform="translate(21.0 46.3) rotate(-35)" d="M 0 2 C -7 -3 -7.3 -10 0 -16.5 C 7.3 -10 7 -3 0 2 Z" fill="currentColor"/><path transform="translate(29.4 37.9) rotate(-10)" d="M 0 2 C -8.5 -4.5 -9 -17 0 -27.5 C 9 -17 8.5 -4.5 0 2 Z" fill="currentColor"/><path transform="translate(40.9 34.8) rotate(22)" d="M 0 2 C -8.5 -4.5 -8.5 -16 0 -26 C 9.5 -16 9 -4.5 0 2 Z" fill="currentColor"/></svg></span>CK</span><span class="pm-meals">MEALS</span></span>
-          <span class="brand-script" aria-hidden="true">Somos Comida</span>
+          <img class="brand-logo" src="assets/img/logo-pickmeals-blanco.svg" alt="" width="720" height="490" decoding="async">
         </a>
         <p>Comida rica, práctica y lista para tu punto de venta.</p>
         <ul class="seal-pills" role="list" aria-label="Diferenciales de Pick Meals">
