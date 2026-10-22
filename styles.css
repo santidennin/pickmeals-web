@@ -889,7 +889,7 @@ select.input {
 @media (min-width: 720px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
   .product-card { grid-template-columns: 1fr; }
-  .product-media { aspect-ratio: 4 / 5; min-height: 0; }
+  .product-media { aspect-ratio: 4 / 3; min-height: 0; }
   .pillars { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
   .claims-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
   .products-intro { grid-template-columns: 1.1fr 1fr; align-items: end; gap: 2.5rem; }
@@ -942,7 +942,7 @@ select.input {
 
 @media (min-width: 1280px) {
   .products-grid { grid-template-columns: repeat(4, 1fr); }
-  .products-grid--catalog { grid-template-columns: repeat(3, 1fr); }
+  .products-grid--catalog { grid-template-columns: repeat(4, 1fr); }
   .pillars { grid-template-columns: repeat(4, 1fr); }
   .hero-grid { grid-template-columns: 1.2fr .8fr; }
 }
