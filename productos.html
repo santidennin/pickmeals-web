@@ -36,7 +36,6 @@
 
   <link rel="stylesheet" href="styles.css?v=20261021">
 
-  <!-- PENDIENTE: agregar "telephone" cuando esté confirmado. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,6 +50,14 @@
         "slogan": "Somos comida",
         "description": "Elaboramos viandas pensadas para resolver las comidas de todos los días, combinando sabor, calidad y frescura, con tecnología de Atmósfera Controlada y sin conservantes artificiales. Productos para almacenes, autoservicios, mercados y puntos de venta.",
         "email": "info@pickmeals.com.ar",
+        "telephone": "+5491136065066",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Padre M. Ashkar 566",
+          "addressLocality": "Villa Lynch",
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "AR"
+        },
         "sameAs": [
           "https://www.instagram.com/pickmeals.ar/",
           "https://linktr.ee/pickmeals"
@@ -59,6 +66,7 @@
           "@type": "ContactPoint",
           "contactType": "sales",
           "email": "info@pickmeals.com.ar",
+          "telephone": "+5491136065066",
           "availableLanguage": "es"
         }
       },
@@ -227,7 +235,7 @@
               <span class="blob-shape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0Z"/><path d="M8 20.5h8"/><path d="M8 7.5c0-1.6 1.2-1.6 1.2-3.2M12 7.5c0-1.6 1.2-1.6 1.2-3.2M16 7.5c0-1.6 1.2-1.6 1.2-3.2"/></svg></span>
             </div>
             <h3>Calidad y sabor</h3>
-            <p>Comida con sabor casero, pensada para resolver el día a día sin resignar calidad.</p>
+            <p>Elaboración bajo normas ISO 9001 y Buenas Prácticas de Manufactura, con sabor casero pensado para resolver el día a día sin resignar calidad.</p>
           </li>
           <li class="pillar" data-reveal style="--d:1">
             <div class="pillar-icon" aria-hidden="true">
@@ -320,8 +328,8 @@
         <ul role="list">
           <li><a href="mailto:info@pickmeals.com.ar">info@pickmeals.com.ar</a></li>
           <li><a href="contacto.html" data-wa>WhatsApp</a></li>
-          <!-- PENDIENTE: teléfono confirmado → se configura en lib/manifest.js (contact.phone) y aparece solo -->
           <li data-phone hidden><a href="contacto.html">Tel. <span data-phone-value></span></a></li>
+          <li><a href="https://maps.google.com/?q=Padre+M.+Ashkar+566,+Villa+Lynch,+Buenos+Aires" target="_blank" rel="noopener">Planta: Padre M. Ashkar 566, Villa Lynch</a></li>
           <li><a href="https://www.instagram.com/pickmeals.ar/" target="_blank" rel="noopener">Instagram · @pickmeals.ar</a></li>
           <li><a href="https://linktr.ee/pickmeals" target="_blank" rel="noopener">Linktree · linktr.ee/pickmeals</a></li>
           <!-- PENDIENTE: URL real de LinkedIn → <li><a href="URL" target="_blank" rel="noopener">LinkedIn</a></li> -->
